@@ -23,8 +23,8 @@ return {
 						["<C-d>"] = actions.delete_buffer,
 					},
 					n = {
-						["<C-d>"] = actions.delete_buffer, -- deletes selected buffer in normal mode.
 						["<C-x>"] = actions.close, -- closes telescope window in insert mode.
+						["<C-d>"] = actions.delete_buffer, -- deletes selected buffer in normal mode.
 					},
 				},
 			},
