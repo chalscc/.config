@@ -19,12 +19,9 @@ return {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
 						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-						["<C-x>"] = actions.close,
-						["<C-d>"] = actions.delete_buffer,
-					},
-					n = {
-						["<C-x>"] = actions.close, -- closes telescope window in insert mode.
-						["<C-d>"] = actions.delete_buffer, -- deletes selected buffer in normal mode.
+						["<C-h>"] = actions.select_horizontal, -- open result in vertical split
+						["<C-v>"] = actions.select_vertical, -- open result in vertical vertical
+						["<C-x>"] = actions.delete_buffer, -- delete result in buffer
 					},
 				},
 			},
