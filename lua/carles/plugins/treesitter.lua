@@ -45,8 +45,8 @@ return {
 						["aa"] = { query = "@parameter.outer", desc = "Parameter" },
 						["ia"] = { query = "@parameter.inner", desc = "Parameter" },
 
-						["av"] = { query = "@assignment.lhs", desc = "Left assignment" },
-						["iv"] = { query = "@assignment.rhs", desc = "Right assignment" },
+						["av"] = { query = "@assignment.lhs", desc = "Variable assignment" },
+						["iv"] = { query = "@assignment.rhs", desc = "Value assignment" },
 
 						["al"] = { query = "@loop.outer", desc = "Loop" },
 						["il"] = { query = "@loop.inner", desc = "Loop" },

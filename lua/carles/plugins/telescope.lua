@@ -22,6 +22,7 @@ return {
 						["<C-h>"] = actions.select_horizontal, -- open result in vertical split
 						["<C-v>"] = actions.select_vertical, -- open result in vertical vertical
 						["<C-x>"] = actions.delete_buffer, -- delete result in buffer
+						["<C-c>"] = actions.close, -- close telescope
 					},
 				},
 			},
