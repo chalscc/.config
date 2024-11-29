@@ -61,7 +61,7 @@ return {
 						-- surface2 = "#XXXXXX",
 						-- surface1 = "#XXXXXX",
 						-- surface0 = "#XXXXXX",
-						base = "#202020",
+						base = "#292929",
 						mantle = "#222222",
 						crust = "#333333",
 					},
