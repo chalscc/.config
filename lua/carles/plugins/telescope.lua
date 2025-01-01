@@ -24,6 +24,9 @@ return {
 						["<C-x>"] = actions.delete_buffer, -- delete result in buffer
 						["<C-c>"] = actions.close, -- close telescope
 					},
+					n = {
+						["<C-c>"] = actions.close, -- close telescope
+					},
 				},
 			},
 		})
