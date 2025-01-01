@@ -57,9 +57,11 @@ return {
 						["ar"] = { query = "@return.outer", desc = "Return" },
 						["ir"] = { query = "@return.inner", desc = "Return" },
 
-						["a/"] = { query = "@comment.outer", desc = "Comment" },
+						["a/"] = { query = "@comment.outer", desc = "Comment" }, -- Duplicate keybind for same function
+						["i/"] = { query = "@comment.outer", desc = "Comment" },
 
-						["in"] = { query = "@number.inner", desc = "Number" },
+						["in"] = { query = "@number.inner", desc = "Number" }, -- Duplicate keybind for same function
+						["an"] = { query = "@number.inner", desc = "Number" },
 					},
 				},
 			},
