@@ -1,10 +1,14 @@
 vim.g.mapleader = " "
 
-local keymap = vim.keymap -- for conciseness
+local keymap = vim.keymap
 
 keymap.set("i", "jj", "<ESC>", { desc = "Exit insert mode with jk" })
 
 keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
+
+-- Add empty lines before and after cursor in normal mode
+keymap.set("n", "gO", "<Cmd>call append(line('.')-1, repeat([''], v:count1))<CR>", { desc = "Insert blank line above" })
+keymap.set("n", "go", "<Cmd>call append(line('.'), repeat([''], v:count1))<CR>", { desc = "Insert blank line below" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment
