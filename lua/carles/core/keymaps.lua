@@ -29,7 +29,10 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- custom functions
 keymap.set(
 	"n",
-	"<Leader>sc",
+	"gs",
 	'<cmd>lua require("carles.functions.switch-case").switch_case()<CR>',
-	{ desc = "Switch case" }
+	{ desc = "Switch camel/snake case" }
 )
+
+-- wezterm command to see keybinds
+keymap.set("n", "gi", "<Cmd>!wezterm show-keys --lua --key-table custom<CR>", { desc = "WezTerm keybinds" })
