@@ -15,6 +15,7 @@ local config = {
 	launch_menu = {},
 	disable_default_key_bindings = true,
 	font = wezterm.font("JetBrains Mono"),
+	max_fps = 144,
 }
 
 -- LEADER keybind
