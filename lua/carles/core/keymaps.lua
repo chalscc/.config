@@ -35,4 +35,4 @@ keymap.set(
 )
 
 -- wezterm command to see keybinds
-keymap.set("n", "gi", "<Cmd>!wezterm show-keys --lua --key-table custom<CR>", { desc = "WezTerm keybinds" })
+keymap.set("n", "<leader>ti", "<Cmd>!wezterm show-keys --lua --key-table custom<CR>", { desc = "WezTerm keybinds" })
