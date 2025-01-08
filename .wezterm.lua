@@ -19,7 +19,7 @@ local config = {
 }
 
 -- LEADER keybind
-config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 2000 }
+config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 3000 }
 
 -- custom keybindings defined
 local leader_key_bindings = {
@@ -31,6 +31,7 @@ local leader_key_bindings = {
 	{ key = "x", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
 	{ key = "o", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "v", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "m", action = wezterm.action.TogglePaneZoomState }, -- maximize/minimeze visibility of pane
 	-- movement
 	{ key = "h", action = wezterm.action.ActivatePaneDirection("Left") },
 	{ key = "j", action = wezterm.action.ActivatePaneDirection("Down") },
