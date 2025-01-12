@@ -17,6 +17,12 @@ local config = {
 	font = wezterm.font("JetBrains Mono"),
 	max_fps = 144,
 	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
+	window_padding = {
+		left = 0,
+		right = 0,
+		top = 5,
+		bottom = 0,
+	},
 }
 
 -- LEADER keybind
