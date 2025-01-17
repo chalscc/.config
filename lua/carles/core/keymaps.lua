@@ -36,3 +36,7 @@ keymap.set(
 
 -- wezterm command to see keybinds
 keymap.set("n", "<leader>ti", "<Cmd>!wezterm show-keys --lua --key-table custom<CR>", { desc = "WezTerm keybinds" })
+
+-- simple notes
+keymap.set("n", "<leader>fn", "<Cmd>:SimpleNoteList<CR>", { desc = "Fuzzy find note" })
+keymap.set("n", "<leader>nn", "<Cmd>:SimpleNoteCreate<CR>", { desc = "New note" })
