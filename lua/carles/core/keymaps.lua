@@ -39,4 +39,9 @@ keymap.set("n", "<leader>ti", "<Cmd>!wezterm show-keys --lua --key-table custom<
 
 -- simple notes
 keymap.set("n", "<leader>fn", "<Cmd>:SimpleNoteList<CR>", { desc = "Fuzzy find note" })
-keymap.set("n", "<leader>nn", "<Cmd>:SimpleNoteCreate<CR>", { desc = "New note" })
+keymap.set(
+	"n",
+	"<leader>nn",
+	'<cmd>lua require("carles.functions.command-with-args").command_with_args("Enter note title:", "SimpleNoteCreate %s")<CR>',
+	{ desc = "New note" }
+)
