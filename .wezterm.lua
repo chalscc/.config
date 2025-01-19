@@ -9,7 +9,7 @@ local config = {
 		brightness = 1.0,
 	},
 	colors = {
-		background = "#111111",
+		background = "#161616",
 	},
 	font_size = 9.5,
 	launch_menu = {},
