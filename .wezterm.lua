@@ -87,7 +87,7 @@ wezterm.on("update-right-status", function(window, _)
 	local prefix = ""
 
 	if window:leader_is_active() then
-		prefix = "Command mode " .. utf8.char(0x26A1)
+		prefix = utf8.char(0x26A1) .. utf8.char(0x26A1) .. utf8.char(0x26A1)
 	end
 
 	window:set_left_status(wezterm.format({
