@@ -31,31 +31,38 @@ config.leader = { key = "q", mods = "ALT", timeout_milliseconds = 3000 }
 -- custom keybindings defined
 local leader_key_bindings = {
 	-- tabs
-	{ key = "c", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
-	{ key = "p", action = wezterm.action.ActivateTabRelative(-1) },
-	{ key = "n", action = wezterm.action.ActivateTabRelative(1) },
+	{ key = "c", mods = "LEADER", action = wezterm.action.SpawnTab("CurrentPaneDomain") },
+	{ key = "p", mods = "LEADER", action = wezterm.action.ActivateTabRelative(-1) },
+	{ key = "n", mods = "LEADER", action = wezterm.action.ActivateTabRelative(1) },
 	-- panes
-	{ key = "x", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
-	{ key = "o", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "v", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
-	{ key = "m", action = wezterm.action.TogglePaneZoomState }, -- maximize/minimeze visibility of pane
+	{ key = "x", mods = "LEADER", action = wezterm.action.CloseCurrentPane({ confirm = true }) },
+	{ key = "o", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "v", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "m", mods = "LEADER", action = wezterm.action.TogglePaneZoomState }, -- maximize/minimeze visibility of pane
 	-- movement
-	{ key = "h", action = wezterm.action.ActivatePaneDirection("Left") },
-	{ key = "j", action = wezterm.action.ActivatePaneDirection("Down") },
-	{ key = "k", action = wezterm.action.ActivatePaneDirection("Up") },
-	{ key = "l", action = wezterm.action.ActivatePaneDirection("Right") },
+	{ key = "h", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Left") },
+	{ key = "j", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Down") },
+	{ key = "k", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Up") },
+	{ key = "l", mods = "LEADER", action = wezterm.action.ActivatePaneDirection("Right") },
 	-- resize
-	{ key = "LeftArrow", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
-	{ key = "RightArrow", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
-	{ key = "DownArrow", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
-	{ key = "UpArrow", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "LeftArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Left", 5 }) },
+	{ key = "RightArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Right", 5 }) },
+	{ key = "DownArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Down", 5 }) },
+	{ key = "UpArrow", mods = "LEADER", action = wezterm.action.AdjustPaneSize({ "Up", 5 }) },
+	-- copy/paste
+	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.CopyTo("Clipboard") },
+	{ key = "v", mods = "CTRL|SHIFT", action = wezterm.action.PasteFrom("Clipboard") },
+	-- find
+	{ key = "/", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
+	-- modes
+	{ key = "F1", mods = "NONE", action = "ActivateCopyMode" },
 }
 
 -- define keybinds and add the LEADER key to trigger them
 config.keys = {}
 for _, binding in ipairs(leader_key_bindings) do
 	table.insert(config.keys, {
-		mods = "LEADER",
+		mods = binding.mods,
 		key = binding.key,
 		action = binding.action,
 	})
