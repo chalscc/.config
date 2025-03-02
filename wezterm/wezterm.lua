@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local custom_colors = dofile(os.getenv("USERPROFILE") .. "/.config/colors/custom.lua")
 
 local config = {
 	audible_bell = "Disabled",
@@ -9,7 +10,7 @@ local config = {
 		brightness = 1.0,
 	},
 	colors = {
-		background = "#161616",
+		background = custom_colors.terminal_bg,
 	},
 	font_size = 9.5,
 	launch_menu = {},

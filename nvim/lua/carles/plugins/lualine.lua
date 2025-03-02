@@ -4,16 +4,17 @@ return {
 	config = function()
 		local lualine = require("lualine")
 		local lazy_status = require("lazy.status") -- to configure lazy pending updates count
+		local custom_colors = dofile(os.getenv("USERPROFILE") .. "/.config/colors/custom.lua")
 
 		local colors = {
-			blue = "#65D1FF",
-			green = "#3EFFDC",
-			violet = "#FF61EF",
-			yellow = "#FFDA7B",
-			red = "#FF4A4A",
-			fg = "#c3ccdc",
-			bg = "#393939", -- Background in current split
-			inactive_bg = "#292929", -- Background in inactive split
+			blue = custom_colors.blue,
+			green = custom_colors.green,
+			violet = custom_colors.violet,
+			yellow = custom_colors.yellow,
+			red = custom_colors.red,
+			fg = custom_colors.foreground,
+			bg = custom_colors.active_background, -- Background in current split
+			inactive_bg = custom_colors.inactive_background, -- Background in inactive split
 		}
 
 		local my_lualine_theme = {

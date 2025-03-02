@@ -4,6 +4,8 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
+			local custom_colors = dofile(os.getenv("USERPROFILE") .. "/.config/colors/custom.lua")
+
 			require("catppuccin").setup({
 				flavour = "auto", -- latte, frappe, macchiato, mocha
 				background = { -- :h background
@@ -61,9 +63,9 @@ return {
 						-- surface2 = "#XXXXXX",
 						-- surface1 = "#XXXXXX",
 						-- surface0 = "#XXXXXX",
-						base = "#292929",
-						mantle = "#222222",
-						crust = "#333333",
+						base = custom_colors.base,
+						mantle = custom_colors.mantle,
+						crust = custom_colors.crust,
 					},
 				},
 				custom_highlights = {},
