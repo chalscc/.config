@@ -13,7 +13,12 @@ local config = {
 		background = custom_colors.terminal_bg,
 	},
 	font_size = 9.5,
-	launch_menu = {},
+	launch_menu = {
+		{
+			label = "Git Bash",
+			args = { "C:/Program Files/Git/bin/bash.exe", "--login", "-i" },
+		},
+	},
 	disable_default_key_bindings = true,
 	font = wezterm.font("JetBrains Mono"),
 	max_fps = 144,
@@ -57,6 +62,17 @@ local leader_key_bindings = {
 	{ key = "/", mods = "LEADER", action = wezterm.action.Search({ CaseInSensitiveString = "" }) },
 	-- modes
 	{ key = "F1", mods = "NONE", action = "ActivateCopyMode" },
+	-- open git bash
+	{
+		key = "g",
+		mods = "LEADER",
+		action = wezterm.action.SplitPane({
+			direction = "Right",
+			command = {
+				args = { "C:/Program Files/Git/bin/bash.exe", "--login", "-i" },
+			},
+		}),
+	},
 }
 
 -- define keybinds and add the LEADER key to trigger them
