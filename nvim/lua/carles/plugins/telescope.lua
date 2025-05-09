@@ -19,11 +19,14 @@ return {
 					i = {
 						["<C-k>"] = actions.move_selection_previous, -- move to prev result
 						["<C-j>"] = actions.move_selection_next, -- move to next result
-						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
 						["<C-h>"] = actions.select_horizontal, -- open result in vertical split
 						["<C-v>"] = actions.select_vertical, -- open result in vertical vertical
 						["<C-x>"] = actions.delete_buffer, -- delete result in buffer
 						["<C-c>"] = actions.close, -- close telescope
+
+						-- qflist
+						["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+						["<C-s>"] = actions.smart_add_to_qflist,
 					},
 					n = {
 						["<C-c>"] = actions.close, -- close telescope
@@ -48,5 +51,8 @@ return {
 		keymap.set("n", "<leader>fh", "<cmd>Telescope git_status<cr>", { desc = "Fuzzy find git files" })
 		keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Fuzzy find marks" })
 		keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Fuzzy find registers" })
+
+		keymap.set("n", "<leader>fk", "<cmd>cnext<cr>", { desc = "Next quickfix" })
+		keymap.set("n", "<leader>fj", "<cmd>cprev<cr>", { desc = "Previous quickfix" })
 	end,
 }
