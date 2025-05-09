@@ -10,6 +10,7 @@ return {
 	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
+		local conf = require("telescope.config").values
 
 		telescope.setup({
 			defaults = {
@@ -30,6 +31,8 @@ return {
 				},
 			},
 		})
+
+		table.insert(conf.vimgrep_arguments, "--fixed-strings")
 
 		telescope.load_extension("fzf")
 
