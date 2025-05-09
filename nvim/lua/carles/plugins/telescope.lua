@@ -52,7 +52,7 @@ return {
 		keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Fuzzy find marks" })
 		keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Fuzzy find registers" })
 
-		keymap.set("n", "<leader>fk", "<cmd>cnext<cr>", { desc = "Next quickfix" })
-		keymap.set("n", "<leader>fj", "<cmd>cprev<cr>", { desc = "Previous quickfix" })
+		keymap.set("n", "<leader>fj", "<cmd>cnext<cr>", { desc = "Next quickfix" })
+		keymap.set("n", "<leader>fk", "<cmd>cprev<cr>", { desc = "Previous quickfix" })
 	end,
 }
