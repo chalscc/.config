@@ -51,6 +51,7 @@ return {
 		keymap.set("n", "<leader>fh", "<cmd>Telescope git_status<cr>", { desc = "Fuzzy find git files" })
 		keymap.set("n", "<leader>fm", "<cmd>Telescope marks<cr>", { desc = "Fuzzy find marks" })
 		keymap.set("n", "<leader>fr", "<cmd>Telescope registers<cr>", { desc = "Fuzzy find registers" })
+		keymap.set("n", "<leader>fq", "<cmd>Telescope quickfix<cr>", { desc = "Fuzzy find quickfix list" })
 
 		keymap.set("n", "<leader>fj", "<cmd>cnext<cr>", { desc = "Next quickfix" })
 		keymap.set("n", "<leader>fk", "<cmd>cprev<cr>", { desc = "Previous quickfix" })
