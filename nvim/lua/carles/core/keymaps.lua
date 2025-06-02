@@ -45,12 +45,3 @@ keymap.set(
 	'<cmd>lua require("carles.functions.command-with-args").command_with_args({ "Enter note title:" }, "SimpleNoteCreate %s")<CR>',
 	{ desc = "New note" }
 )
-
--- find and replace in quick fix list
-keymap.set(
-	"n",
-	"<leader>rq",
-	'<cmd>lua require("carles.functions.command-with-args").command_with_args({'
-		.. '"Enter search term:", "Enter replace term:"}, "cdo %%s/%s/%s/gc")<CR>',
-	{ desc = "Find and Replace in QuickFixList" }
-)
