@@ -58,18 +58,17 @@ return {
 		-- Capabilities (cmp)
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
-		-- Diagnostic signs
-		local signs = {
-			Error = " ",
-			Warn = " ",
-			Hint = "󰠠 ",
-			Info = " ",
-		}
-
-		for type, icon in pairs(signs) do
-			local hl = "DiagnosticSign" .. type
-			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-		end
+		-- Diagnostic signs (Neovim 0.11+)
+		vim.diagnostic.config({
+			signs = {
+				text = {
+					[vim.diagnostic.severity.ERROR] = " ",
+					[vim.diagnostic.severity.WARN] = " ",
+					[vim.diagnostic.severity.HINT] = "󰠠 ",
+					[vim.diagnostic.severity.INFO] = " ",
+				},
+			},
+		})
 
 		-- Mason LSP (v2.0)
 		mason_lspconfig.setup({

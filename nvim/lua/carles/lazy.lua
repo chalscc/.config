@@ -19,4 +19,7 @@ require("lazy").setup({ { import = "carles.plugins" }, { import = "carles.plugin
   change_detection = {
     notify = false,
   },
+  rocks = {
+    enabled = false, -- no plugins require luarocks
+  },
 })

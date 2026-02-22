@@ -22,6 +22,7 @@ return {
 					package_uninstalled = "✗",
 				},
 			},
+			max_concurrent_installers = 1,
 		})
 
 		mason_lspconfig.setup({
@@ -37,7 +38,6 @@ return {
 				"yamlls",
 				"bashls",
 				"sqlls",
-				"diagnosticls",
 			},
 		})
 
